@@ -1,0 +1,54 @@
+{
+    "name": "cooking in 2d!",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "arcade-sprite-util": "github:jwunderl/arcade-sprite-util#master",
+        "pxt-arcade-image-transform": "github:robo-technical-group/pxt-arcade-image-transform#v1.0.9",
+        "arcade-fancy-text": "github:riknoll/arcade-fancy-text#v0.1.1",
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3",
+        "arcade-character-animations": "github:microsoft/arcade-character-animations#v0.0.2",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0",
+        "BetterSettings": "github:sargedev/bettersettings#2023.5.1",
+        "Sprite Grid": "github:microsoft/arcade-grid#v1.3.0"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "images.g.jres",
+        "images.g.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "1.12.53",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "blocksprj",
+    "palette": [
+        "#000000",
+        "#E6FFCC",
+        "#B1CC7A",
+        "#998A3D",
+        "#6E422C",
+        "#3B2327",
+        "#190C1F",
+        "#233B3B",
+        "#2C6E49",
+        "#4D993D",
+        "#294766",
+        "#456299",
+        "#A3A3CC",
+        "#6E2C2C",
+        "#995C3D",
+        "#CCB17A"
+    ]
+}
