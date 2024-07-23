@@ -1,3 +1,9 @@
+namespace SpriteKind {
+    export const background = SpriteKind.create()
+}
+function shade_image2 (myImage: Image) {
+	
+}
 function golden_sailer_cut_check (Image2: Image) {
     if (Image2.equals(assets.image`Golden Sailor 2`) || Image2.equals(assets.image`Golden Sailor -2`)) {
         score = 1
@@ -47,6 +53,7 @@ function mud_face_cut_check (Image2: Image) {
         score = 0
     }
 }
+let cooked = 0
 let score = 0
 let X = 0
 let fake_x = 0
@@ -54,8 +61,9 @@ spriteutils.drawTransparentImage(assets.image`cutting board`, scene.backgroundIm
 scene.setBackgroundColor(5)
 let mySprite = sprites.create(assets.image`Golden Sailor cut`, SpriteKind.Player)
 mySprite.setPosition(83, 78)
-let myTextSprite = fancyText.create("Cut through the line!", 57)
-myTextSprite.setPosition(31, 20)
+let myTextSprite = fancyText.create("Cut through the   line!", 75)
+myTextSprite.z = 20
+myTextSprite.setPosition(40, 17)
 pause(1000)
 while (!(controller.A.isPressed())) {
     mySprite.setImage(assets.image`Golden Sailor`)
@@ -79,6 +87,7 @@ if (score == 3) {
 pause(750)
 mySprite.image.fillRect(X, 0, 100, 32, 0)
 pause(500)
+fancyText.setText(myTextSprite, "grill until  one  shade darker")
 scene.setBackgroundImage(img`
     ................................................................................................................................................................
     ................................................................................................................................................................
@@ -201,6 +210,99 @@ scene.setBackgroundImage(img`
     ................................................................................................................................................................
     ................................................................................................................................................................
     `)
+let mySprite2 = sprites.create(assets.image`deep fryer basket back layer`, SpriteKind.background)
+let mySprite3 = sprites.create(assets.image`deep fryer basket front layer`, SpriteKind.background)
+mySprite.z += 1
+mySprite2.z = 1 - mySprite.z
+mySprite3.z = 1 + mySprite.z
+mySprite.setPosition(85, 20)
+pause(1000)
+mySprite.setVelocity(0, 75)
+pause(612.5)
+mySprite.setVelocity(0, 0)
+scene.setBackgroundImage(assets.image`myImage1`)
+pause(randint(1500, 2000))
+let cooking = true
+if (cooking) {
+    mySprite.image.replace(5, 6)
+    mySprite.image.replace(4, 5)
+    mySprite.image.replace(14, 4)
+    mySprite.image.replace(3, 14)
+    mySprite.image.replace(15, 14)
+    mySprite.image.replace(2, 3)
+    mySprite.image.replace(1, 2)
+    mySprite.image.replace(10, 6)
+    mySprite.image.replace(11, 10)
+    mySprite.image.replace(12, 11)
+    mySprite.image.replace(7, 6)
+    mySprite.image.replace(8, 7)
+    mySprite.image.replace(9, 8)
+    mySprite.image.replace(13, 6)
+    cooked += 1
+    for (let index = 0; index < 75; index++) {
+        if (controller.A.isPressed()) {
+            cooking = false
+        }
+        pause(1)
+    }
+}
+if (cooking) {
+    mySprite.image.replace(5, 6)
+    mySprite.image.replace(4, 5)
+    mySprite.image.replace(14, 4)
+    mySprite.image.replace(3, 14)
+    mySprite.image.replace(15, 14)
+    mySprite.image.replace(2, 3)
+    mySprite.image.replace(1, 2)
+    mySprite.image.replace(10, 6)
+    mySprite.image.replace(11, 10)
+    mySprite.image.replace(12, 11)
+    mySprite.image.replace(7, 6)
+    mySprite.image.replace(8, 7)
+    mySprite.image.replace(9, 8)
+    mySprite.image.replace(13, 6)
+    cooked += 1
+    for (let index = 0; index < 100; index++) {
+        if (controller.A.isPressed()) {
+            cooking = false
+        }
+        pause(1)
+    }
+}
+if (cooking) {
+    mySprite.image.replace(5, 6)
+    mySprite.image.replace(4, 5)
+    mySprite.image.replace(14, 4)
+    mySprite.image.replace(3, 14)
+    mySprite.image.replace(15, 14)
+    mySprite.image.replace(2, 3)
+    mySprite.image.replace(1, 2)
+    mySprite.image.replace(10, 6)
+    mySprite.image.replace(11, 10)
+    mySprite.image.replace(12, 11)
+    mySprite.image.replace(7, 6)
+    mySprite.image.replace(8, 7)
+    mySprite.image.replace(9, 8)
+    mySprite.image.replace(13, 6)
+    cooked += 1
+}
+if (cooked == 1) {
+    fancyText.setText(myTextSprite, "my    mouth    is    watering!")
+} else if (cooked == 2) {
+    fancyText.setText(myTextSprite, "it's burned...")
+} else if (cooked == 3) {
+    fancyText.setText(myTextSprite, "mind      as     well     be     eating coal")
+}
+pause(2500)
+sprites.destroy(mySprite2)
+sprites.destroy(mySprite3)
+sprites.destroy(myTextSprite)
+mySprite.setFlag(SpriteFlag.Invisible, true)
+scene.backgroundImage().fillRect(0, 0, 160, 120, 0)
+spriteutils.drawTransparentImage(assets.image`plate`, scene.backgroundImage(), 39, 25)
+screenTransitions.startTransition(screenTransitions.Clock, 1000, false, true)
+pause(1000)
+mySprite.setFlag(SpriteFlag.Invisible, false)
 forever(function () {
     info.setScore(X)
     if (controller.left.isPressed()) {

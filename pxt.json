@@ -10,7 +10,9 @@
         "arcade-character-animations": "github:microsoft/arcade-character-animations#v0.0.2",
         "Timers": "github:microsoft/arcade-timers#v1.1.0",
         "BetterSettings": "github:sargedev/bettersettings#2023.5.1",
-        "Sprite Grid": "github:microsoft/arcade-grid#v1.3.0"
+        "Sprite Grid": "github:microsoft/arcade-grid#v1.3.0",
+        "arcade-state-transitions": "github:riknoll/arcade-state-transitions#v0.0.3",
+        "arcade-screen-transitions": "github:riknoll/arcade-screen-transitions#v0.1.0"
     },
     "files": [
         "main.blocks",
