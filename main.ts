@@ -444,3 +444,5 @@ if (score == 1) {
 }
 mySprite4.image.replace(6, 9)
 mySprite4.setPosition(20, 20)
+pause(2000)
+game.gameOver(true)
